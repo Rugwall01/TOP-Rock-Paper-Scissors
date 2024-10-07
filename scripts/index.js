@@ -26,21 +26,16 @@ switch (choice) {
     break;
 }
 
-
-
 function getComputerChoice() {
     let baseRand = Math.floor(Math.random() * 10)
-    if(baseRand <= 3.33) {
+    if(baseRand <= 3) {
         return "ROCK!"
-    } else if(baseRand > 3.33 &&  baseRand <= 6.66) {
+    } else if(baseRand > 3 &&  baseRand <= 6) {
         return "PAPER!"
     } else {
         return "SCISSORS!"
     }
 }
-
-
-
 
 function getUserChoice() {
     let userChoice = prompt("Rock, Paper, Scissors?: ");
@@ -53,7 +48,6 @@ function getUserChoice() {
     }
 
 }
-
 
 function calcWinner(user, computer) {
     if(user.includes("ROCK") && computer == "SCISSORS!") {
@@ -88,19 +82,6 @@ function addPoints(win) {
     } else {
         console.log("No points awarded")
     }
-
-
-}
-
-function playRound() {
-    userScore = 0;
-    compScore = 0;
-    let human = getUserChoice();
-    let comp = getComputerChoice();
-    console.log(("You: " + human + " ") + ("Computer: " + comp));
-    winner = calcWinner(human, comp);
-    console.log(`The winner of this round is: ${winner}`);
-    addPoints(winner)
 }
 
 function dispWinner(user1, comp1) {
@@ -111,4 +92,15 @@ function dispWinner(user1, comp1) {
         alert(`The Computer won the GAME!\n It's final score is: ${finalCompScore}`);
         console.log(`The Computer won the GAME! It's final score is: ${finalCompScore}`);
     }
+}
+
+function playRound() {
+    userScore = 0;
+    compScore = 0;
+    let human = getUserChoice();
+    let comp = getComputerChoice();
+    console.log(("You: " + human + "! ") + ("Computer: " + comp));
+    winner = calcWinner(human, comp);
+    console.log(`The winner of this round is: ${winner}`);
+    addPoints(winner)
 }
