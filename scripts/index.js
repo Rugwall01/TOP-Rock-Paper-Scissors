@@ -37,7 +37,9 @@ function getUserChoice() {
     }
 
 }
-
+//The below function is made in this manner to allow flexibility in the user input
+//These statements are not mirrors of eachother and the user input is only checked to see
+//If it contains a valid substring (Could potentially enter two answers that would both be valid, in this case the program selects one but I dont know how it determines which one to select)
 function calcWinner(user, computer) {
     if(user.includes("ROCK") && computer == "SCISSORS!") {
         return "YOU!"
