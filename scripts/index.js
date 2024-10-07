@@ -7,18 +7,7 @@ while (choice !== "1" && choice !== "2") {
 
 switch (choice) {
   case "1":
-    console.log("LET'S BEGIN!!!!")
-    finalUserScore = 0
-    finalCompScore = 0
-    for(let i = 1; i < 6; i++) {
-        playRound()
-        finalUserScore += userScore;
-        finalCompScore += compScore
-    }
-
-    console.log(`YOU: ${finalUserScore}`);
-    console.log(`COMPUTER: ${finalCompScore}`);
-    dispWinner(finalUserScore, finalCompScore);
+    playGame()
     break;
   case "2":
     alert("Ok, Goodbye now!!")
@@ -103,4 +92,18 @@ function playRound() {
     winner = calcWinner(human, comp);
     console.log(`The winner of this round is: ${winner}`);
     addPoints(winner)
+}
+
+function playGame() {
+    console.log("LET'S BEGIN!!!!")
+    finalUserScore = 0
+    finalCompScore = 0
+    for(let i = 1; i < 6; i++) {
+        playRound()
+        finalUserScore += userScore;
+        finalCompScore += compScore
+    }
+    console.log(`YOU: ${finalUserScore}`);
+    console.log(`COMPUTER: ${finalCompScore}`);
+    dispWinner(finalUserScore, finalCompScore);
 }
