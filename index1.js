@@ -76,14 +76,14 @@ function dispWinner(user1, comp1) {
             console.log(`YOU won the game! Your final score is: ${userScore}`);
             userWin = `YOU won the game! Your final score is: ${userScore}, the computer scored: ${compScore}`;
             const dispWinU = document.createElement('div');
-            dispWinU.textContent += ` \n ${userWin}`; 
+            dispWinU.textContent = ` ${userWin}`; 
             body.appendChild(dispWinU); 
         } else {
             alert(`The Computer won the game!\n It's final score is: ${compScore}`);
             console.log(`The Computer won the game! It's final score is: ${compScore}`);
             compWin = `The Computer won the game! It's final score is: ${compScore}, you scored: ${userScore}`;
             const dispWinC = document.createElement('div');
-            dispWinC.textContent = ` \n ${compWin}`
+            dispWinC.textContent = ` ${compWin}`
             body.appendChild(dispWinC);
         }
     }
